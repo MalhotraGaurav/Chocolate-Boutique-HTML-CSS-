@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chocolate Boutique</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
+        integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans+Condensed:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            overflow-x:hidden ;
+        }
+
+        .topnav {
+            top: 0;
+            position: sticky;
+            overflow: hidden;
+            background-color: rgb(109, 59, 59);
+        }
+
+        .topnav-right {
+            float: right;
+            margin-top: -18px;
+        }
+
+        .topnav-right a {
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            margin: 8px;
+        }
+
+        .topnav-centered {
+            margin-top: 6px;
+        }
+
+        .topnav-centered a {
+            float: none;
+            top: 25%;
+            left: 20%;
+            position: relative;
+            transform: translate(-50%, -50%);
+            text-decoration: none;
+            color: white;
+            padding: 20px;
+            font-size: 1.2rem;
+        }
+
+        .topnav h2 {
+            float: left;
+            color: white;
+            font-size: 1.3rem;
+            margin-left: 30px;
+            margin-top: 8px;
+            cursor: pointer;
+            letter-spacing: 0.1rem;
+        }
+
+        .top_to_mid {
+            text-align: center;
+            margin-top: 200px;
+        }
+
+        .top_to_mid::before {
+            content: "";
+            position: absolute;
+            background: url('ice_cream1.jpg')no-repeat center center/cover;
+            z-index: -1;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            opacity: 0.9;
+            height: 1000px;
+        }
+
+        .top_to_mid p {
+            color: white;
+            margin-bottom: 30px;
+            letter-spacing: 0.2rem;
+        }
+
+        .top_to_mid h1,
+        h2 {
+            color: white;
+            font-size: 6rem;
+            letter-spacing: 0.3rem;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .top_to_mid .btn1 {
+            color: white;
+            border: 2px solid white;
+            font-family: 'Open Sans Condensed', sans-serif;
+            background-color: transparent;
+            font-size: 1.7rem;
+            margin-top: 60px;
+            cursor: pointer;
+            width: 200px;
+        }
+
+        .top_to_mid .btn1:hover {
+            background-color: rgb(170, 162, 162);
+            transition-duration: 0.3s;
+        }
+
+        .special_day {
+            margin-top: 270px;
+            width: 35%;
+            margin-left: 250px;
+            text-align: center;
+            color: #756F63;
+            font-family: 'Open Sans Condensed', sans-serif;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .special_day .abc {
+            color: #756F63;
+            font-size: 2rem;
+        }
+
+        .special_day h3 {
+            margin-top: 20px;
+            letter-spacing: 0.3rem;
+        }
+
+        hr {
+            width: 80px;
+            margin: auto;
+            margin-top: 50px;
+        }
+
+        .special_day p {
+            margin-top: 40px;
+        }
+
+        .special_day a {
+            text-decoration: none;
+            color: #756F63;
+            display: inline-block;
+            margin-top: 70px;
+            font-size: 1.2rem;
+        }
+
+        .special_box_image img {
+            margin: -353px -528px;
+            float: right;
+            height: 313px;
+            cursor: pointer;
+            border: 3px solid black;
+        }
+
+        .row {
+            display: flex;
+            margin: 688px 0px;
+        }
+
+        .column {
+            flex: 33.33%;
+        }
+
+        .column img:hover {
+            opacity: 0.7;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            border: 2px solid black;
+            transition-delay: 0.3s;
+        }
+
+        .row2 {
+            display: flex;
+            text-align: center;
+            margin-top: -675px;
+            color: #756F63;
+        }
+
+        .column2 {
+            width: 50%;
+        }
+
+        .column2 img {
+            border: 3px solid black;
+        }
+
+        .column2 .xyz {
+            color: #756F63;
+            font-size: 2rem;
+        }
+
+        .column2 h3 {
+            margin-top: 20px;
+            letter-spacing: 0.3rem;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .column2 p {
+            margin-top: 40px;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .quote {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .quote::before {
+            content: "";
+            position: absolute;
+            background: url('chocolate_powder.jpg')no-repeat center center/cover;
+            width: 100%;
+            z-index: -1;
+            opacity: 1;
+            left: 0;
+            height: 500px;
+        }
+
+        .quote h2 {
+            font-size: 2rem;
+            color: white;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .quote p {
+            color: white;
+            margin-top: 10px;
+            font-size: 1.2rem;
+        }
+
+        .container {
+            position: absolute;
+            top: 350%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .row3 {
+            margin-top: 735px;
+            display: flex;
+            color: #756F63;
+            margin-left: 100px;
+        }
+
+        .column3 {
+            width: 29.33%;
+            margin-left: 50px;
+            text-align: center;
+        }
+
+        .column3 h2 {
+            color: #756F63;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 2rem;
+        }
+
+        .column3 h3 {
+            margin-top: 20px;
+            letter-spacing: 0.3rem;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .column3 p {
+            margin-top: 40px;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .column3 img {
+            height: 300px;
+            width: 300px;
+            margin-right: 500px;
+            border: 4px solid black;
+        }
+
+        .column3 img:hover {
+            opacity: 0.7;
+            cursor: pointer;
+            transition-duration: 0.3s;
+            border: 2px solid black;
+            transition-delay: 0.3s;
+        }
+
+        .contact {
+            text-align: center;
+            margin-top: 100px;
+            background-color: rgb(206, 200, 200);
+        }
+
+        .contact h2 {
+            color: #756F63;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 2rem;
+        }
+
+        .contact h3 {
+            color: #756F63;
+            margin-top: 25px;
+            letter-spacing: 0.3rem;
+            font-family: 'Open Sans Condensed', sans-serif;
+        }
+
+        .contact a {
+            text-decoration: none;
+            color: #756F63;
+        }
+
+        .contact input,
+        textarea {
+            border: 3px solid red;
+            padding: 10px;
+            margin: 5px;
+            width: 362px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+
+        .btn2 {
+            color: white;
+            background-color: rgb(109, 59, 59);
+            width: 362px;
+            height: 50px;
+            font-size: 1rem;
+        }
+
+        .btn2:hover {
+            cursor: pointer;
+        }
+
+        .mailinglist {
+            text-align: center;
+            background-color: rgb(134, 128, 128);
+            margin-top: 40px;
+        }
+
+        .mailinglist h2 {
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 2rem;
+        }
+
+        .mailinglist input {
+            width: 362px;
+            font-size: 1.1rem;
+            font-family: 'Open Sans Condensed', sans-serif;
+            margin-top: 20px;
+            padding: 3px;
+            text-align: center;
+        }
+
+        .mailinglist .btn3 {
+            color: white;
+            background-color: rgb(109, 59, 59);
+            width: 362px;
+            height: 36px;
+            font-size: 1rem;
+            padding: 9px;
+            margin-bottom: 70px;
+        }
+
+        .mailinglist .btn3:hover {
+            cursor: pointer;
+        }
+
+        .mailinglist a {
+            color: white;
+            padding: 0px 55px;
+            font-family: 'Open Sans Condensed', sans-serif;
+            font-size: 1.1rem;
+
+        }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-family: 'Open Sans Condensed', sans-serif;
+            color: white;
+            background-color: rgb(109, 59, 59);
+        }
+
+        i.facebook {
+            color: blue;
+        }
+
+        i.twitter {
+            color: rgb(37, 184, 233);
+        }
+
+        i.pinterest {
+            color: red;
+        }
+
+        i.instagram {
+            color: rgb(187, 28, 55);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="topnav">
+        <h2>BAISERS DE CHOCOLAT</h2>
+        <div class="topnav-centered">
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="topnav-right">
+            <a href="https://facebook.com"><i class="fab fa-facebook facebook"></i></a>
+            <a href="https://twitter.com"><i class="fab fa-twitter twitter"></i></a>
+            <a href="https://pinterest.com"><i class="fab fa-pinterest pinterest"></i></a>
+            <a href="https://instagram.com"><i class="fab fa-instagram instagram"></i></a>
+        </div>
+    </div>
+    <div class="top_to_mid">
+        <div class="section">
+            <p>-CHOCOLATE BOUTIQUE-</p>
+        </div>
+        <div>
+            <h1>BAISERS</h1>
+        </div>
+        <div>
+            <h2>DE</h2>
+            <h1>CHOCOLAT</h1>
+        </div>
+        <div>
+            <button class="btn1">SHOP ONLINE</button>
+        </div>
+    </div>
+    <div class="special_day" style="float: left;">
+        <h2 class="abc">CELEBRATE A SPECIAL DAY</h2>
+        <div>
+            <h3>LIMITED EDITION ASSERTED CHOCOLATE BOX</h3>
+        </div>
+        <hr>
+        <div>
+            <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or double
+                click me to add your own content and make changes to the font. Feel free to drag and drop me anywhere
+                you like on your page. I’m a great place for you to tell a story and let your users know a little more
+                about you.</p>
+        </div>
+        <div>
+            <a href="#">SHOP ALL></a>
+        </div>
+        <div class="special_box_image">
+            <img src="chocolate_box.jpg" alt="SpecialBox">
+        </div>
+    </div>
+    <div class="row">
+        <div class="column">
+            <img src="ice_cream2.jpg" alt="" style="width: 100%;">
+        </div>
+        <div class="column">
+            <img src="ice_cream3.jpg" alt="" style="width: 100%;height:72.5%;">
+        </div>
+        <div class="column">
+            <img src="ice_cream4.jpg" alt="" style="width: 100%;height: 72.5%;">
+        </div>
+    </div>
+    <div class="row2">
+        <div class="column2">
+            <img src="owner_img.jpg" alt="">
+        </div>
+        <div class="column2">
+            <h2 class="xyz">ABOUT</h2>
+            <div>
+                <h3>BAISERS DE CHOCOLAT</h3>
+            </div>
+            <hr>
+            <div>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or
+                    double click me to add your own content and make changes to the font. Feel free to drag and drop me
+                    anywhere you like on your page.</p>
+            </div>
+            <div>
+                <p>I’m a great place for you to tell a story and let your users know a little more about you.​ This is a
+                    great space to write long text about your company and your services. You can use this space to go
+                    into a little more detail about your company. Talk about your team and what services you provide.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="quote">
+        <div class="container">
+            <div>
+                <h2>"THERE IS NOTHING BETTER THAN A FRIEND,</h2>
+            </div>
+            <div>
+                <h2>UNLESS IT IS A FRIEND WITH CHOCOLATE"</h2>
+            </div>
+            <div>
+                <p>-Linda Grayson-</p>
+            </div>
+        </div>
+    </div>
+    <div class="row3">
+        <div class="column3">
+            <h2 class="mno">OUR CACAO BEANS</h2>
+            <div>
+                <h3>QUALITY CACAO FROM AROUND THE GLOBE</h3>
+            </div>
+            <hr>
+            <div>
+                <p>I'm a paragraph. Click here to add your own text and edit me. It’s easy. Just click “Edit Text” or
+                    double click me to add your own content and make changes to the font. Feel free to drag and drop me
+                    anywhere you like on your page. I’m a great place for you to tell a story and let your users know a
+                    little more about you.​
+                </p>
+            </div>
+        </div>
+        <div class="column3">
+            <img src="cocoa_beans1.jpg" alt="">
+        </div>
+        <div class="column3">
+            <img src="cocoa_beans2.jpg" alt="">
+        </div>
+    </div>
+    <div class="contact">
+        <h2>CONTACT </h2>
+        <hr>
+        <div>
+            <h3>TEL: 123-456-7890 / <a href="#">INFO@MY-DOMAIN.COM</a></h3>
+        </div>
+        <div>
+            <h3>500 TERRY FRANCOIS ST. SAN FRANCISCO, CA 94158</h3>
+        </div>
+        <div>
+            <h3>OPENING HOURS 8:00AM-9:00PM</h3>
+        </div>
+        <div>
+            <input type="name" placeholder="Name">
+        </div>
+        <div>
+            <input type="email" placeholder="Email">
+        </div>
+        <div>
+            <input type="subject" placeholder="Subject">
+        </div>
+        <div>
+            <textarea name="message" id="" cols="30" rows="10" placeholder="Message"></textarea>
+        </div>
+        <div>
+            <button class="btn2">Submit</button>
+        </div>
+    </div>
+    <div class="mailinglist">
+        <h2>JOIN OUR MAILING LIST</h2>
+        <div>
+            <input type="email" name="" id="" placeholder="Enter your Email here"><button class="btn3">Subscribe
+                Now</button>
+        </div>
+        <div>
+            <a href="#">FAQ</a>
+            <a href="#">Shipping and Refunds</a>
+            <a href="#">Store Policy</a>
+        </div>
+    </div>
+    <footer>
+        ©2023 by BAISERS DE CHOCOLAT. Proudly created with abc.com
+    </footer>
+</body>
+
+</html>
